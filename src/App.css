@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f0f4f8;
+  color: #1e293b;
+}
+
+.cabecalho {
+  background-color: #004b8d;
+  color: white;
+  padding: 16px 32px;
+}
+
+.cabecalho h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.cabecalho p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.titulo-secao {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+/* Linha 1: Pista Atual e Barô */
+.linha-topo {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 16px;
+}
+
+.moldura-pista-grande {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+
+.imagem-pista-grande {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.card-baro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.baro-logo-texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #004b8d;
+  margin-bottom: 8px;
+}
+
+.icone-trem {
+  font-size: 3rem;
+}
+
+.baro-logo-texto h2 {
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.baro-logo-texto small {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.modelo-nome {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-badge.pronta {
+  color: #16a34a;
+}
+
+.status-badge.analisando {
+  color: #d97706;
+}
+
+.bolinha {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Linha 2: Miniaturas e Pergunta */
+.linha-meio {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 16px;
+}
+
+.grade-miniaturas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-miniatura {
+  background: none;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  padding: 2px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.btn-miniatura img {
+  height: 110px;
+  width: auto;
+  border-radius: 5px;
+  display: block;
+}
+
+.btn-miniatura.selecionada {
+  border-color: #004b8d;
+  transform: scale(1.03);
+}
+
+.caixa-pergunta {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #334155;
+  white-space: pre-wrap;
+}
+
+/* Botão Executar */
+.area-executar {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+.btn-executar {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.35);
+  transition: background-color 0.2s;
+}
+
+.btn-executar:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.btn-executar:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Linha 3: Situação e Resultados */
+.linha-base {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+
+.card-situacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circulo-icone {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto 12px;
+}
+
+.circulo-icone.perigo {
+  background-color: #dc2626;
+}
+
+.circulo-icone.seguro {
+  background-color: #16a34a;
+}
+
+.circulo-icone.neutro {
+  background-color: #cbd5e1;
+}
+
+.lista-resultados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linha-resultado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.col-pista {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 95px;
+}
+
+.mini-thumb {
+  height: 36px;
+  border-radius: 4px;
+}
+
+.col-badges {
+  display: flex;
+  gap: 6px;
+  min-width: 155px;
+}
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.badge-bate {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-nao-bate {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-acao {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.col-motivo {
+  flex: 1;
+  color: #334155;
+}
+
+.col-tempo {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  min-width: 55px;
+  text-align: right;
+}
+
+.texto-aguardando {
+  color: #94a3b8;
+  font-style: italic;
+  flex: 1;
+}
+
+.texto-erro {
+  color: #dc2626;
+  font-size: 0.85rem;
+  flex: 1;
+}
