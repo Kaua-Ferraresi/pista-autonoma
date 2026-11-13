@@ -329,3 +329,13 @@ body {
   font-size: 0.85rem;
   flex: 1;
 }
+
+.baro-gif {
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+  background-color: #334155; /* Cinza-azulado escuro para destacar o texto branco */
+  padding: 16px 24px;
+  border-radius: 10px;
+}

@@ -19,7 +19,7 @@ async function paraBase64(caminho) {
     const { data } = await axios.get(caminho, { responseType: 'blob' })
     return new Promise((resolve) => {
         const leitor = new FileReader()
-        leitor.onload = () => resolve(leitor.result) // "data:image/png;base64,..."
+        leitor.onload = () => resolve(leitor.result) 
         leitor.readAsDataURL(data)
     })
 }
@@ -41,6 +41,6 @@ export async function analisarImagem(caminho) {
         ],
     })
     const texto = resposta.data.choices[0].message.content
-    const json = texto.match(/\{[\s\S]*\}/) // ignora ```json ... ``` em volta
+    const json = texto.match(/\{[\s\S]*\}/) 
     return JSON.parse(json ? json[0] : texto)
 }

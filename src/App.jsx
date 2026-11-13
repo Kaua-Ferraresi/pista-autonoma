@@ -68,13 +68,11 @@ export default function App() {
 
           <section className="card card-baro">
             <div className="baro-info">
-              <div className="baro-logo-texto">
-                <span className="icone-trem">🚂</span>
-                <div>
-                  <h2>Barô</h2>
-                  <small>a IA da Mauá</small>
-                </div>
-              </div>
+              <img
+                src="/baro-logo-animado-branco.svg"
+                alt="Barô - a IA da Mauá"
+                className="baro-gif"
+              />
               <p className="modelo-nome">
                 {import.meta.env.VITE_BARO_MODEL || 'google/gemma-3-27b'}
               </p>
